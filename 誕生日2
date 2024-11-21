@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>素敵なヒント</title>
+    <style>
+        body {
+            background-color: #FFA500; /* オシャレなオレンジ色 */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .input-container {
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            border: 2px solid white;
+            border-radius: 5px;
+            width: 300px;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #FF6347; /* トマト色 */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #FF4500; /* 濃いトマト色 */
+        }
+        #hintMessage {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: white;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>素敵なヒント</h1>
+    <div class="input-container">
+        <input type="text" id="answer" placeholder="答えを入力してください">
+        <button onclick="checkAnswer()">送信</button>
+    </div>
+    <div id="hintMessage">最後のヒント　もう1人の家族を見てみて</div>
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById('answer').value;
+            const hintMessage = document.getElementById('hintMessage');
+            if (answer === '1130') {
+                hintMessage.style.display = 'block';
+            } else {
+                hintMessage.style.display = 'none';
+                alert('答えが違います！');
+            }
+        }
+    </script>
+</body>
+</html>
